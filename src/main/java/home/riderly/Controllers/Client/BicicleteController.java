@@ -1,11 +1,11 @@
 package home.riderly.Controllers.Client;
 
+import home.riderly.Models.Model;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class BicicleteController implements Initializable {
@@ -15,27 +15,12 @@ public class BicicleteController implements Initializable {
     public Button bicBtn2;
     public ImageView bicImg3;
     public Button bicBtn3;
-
-    public void initialize() {
-        bicImg1.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/bicicleta1.jpg"))));
-        bicImg2.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/bicicleta2.jpg"))));
-        bicImg3.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/bicicleta3.jpg"))));
-    }
-
-    public void bicBtn1Action() {
-        System.out.println("Bicicleta 1");
-    }
-
-    public void bicBtn2Action() {
-        System.out.println("Bicicleta 2");
-    }
-
-    public void bicBtn3Action() {
-        System.out.println("Bicicleta 3");
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+    public void addListeners2(){
+        bicBtn1.setOnAction(event -> peInchiriaza());
+    }
+    private void peInchiriaza(){Model.getInstance().getViewFactory().getClientSelMenuItem().set("Inchiriaza");}
 }

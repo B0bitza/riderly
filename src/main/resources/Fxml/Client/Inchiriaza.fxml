@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="home.riderly.Controllers.Client.InchiriazaController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="126.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="home.riderly.Controllers.Client.InchiriazaController">
+   <Text layoutX="241.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ai inchiriat un vehicul!"
+         AnchorPane.topAnchor="14.0"/>
+   <Text layoutX="127.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0"
+         text="In functie de nr. de km pe care il vei parcurge vei fi taxat 3 lei/km."/>
+   <Text layoutX="67.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0"
+         text="Ai la dispozitie maxim 2 ore pentru a returna vehiculul la standul de unde a fost ridicata."
+         AnchorPane.bottomAnchor="48.98828125"/>
+   <Button fx:id="okBtn" layoutX="283.0" layoutY="87.0" mnemonicParsing="false" text="OK"
+           AnchorPane.bottomAnchor="14.0"/>
 </AnchorPane>
