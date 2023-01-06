@@ -9,13 +9,13 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class ViewFactory {
     //Client
     private final StringProperty clientSelMenuItem;
     private AnchorPane bicicleteView;
     private AnchorPane trotineteView;
+    private AnchorPane istoricView;
 
     public ViewFactory() {
         this.clientSelMenuItem = new SimpleStringProperty("");
@@ -45,6 +45,17 @@ public class ViewFactory {
             }
         }
         return trotineteView;
+    }
+
+    public AnchorPane getIstoricView(){
+        if(istoricView == null){
+            try{
+                istoricView= new FXMLLoader(getClass().getResource("/Fxml/Client/Istoric.fxml")).load();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return istoricView;
     }
     public void showLoginWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));

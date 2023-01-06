@@ -22,6 +22,7 @@ public class ClientMenuController implements Initializable {
     public void addListeners(){
         bicBtn.setOnAction(event -> peBiciclete());
         trotBtn.setOnAction(event -> peTrotinete());
+        istoricBtn.setOnAction(event -> peIstoric());
         logoutBtn.setOnAction(event -> onLogout());
     }
     private void peBiciclete(){
@@ -29,6 +30,9 @@ public class ClientMenuController implements Initializable {
     }
     private void peTrotinete(){
         Model.getInstance().getViewFactory().getClientSelMenuItem().set("Trotinete");
+    }
+    public void peIstoric(){
+        Model.getInstance().getViewFactory().getClientSelMenuItem().set("Istoric");
     }
     private void onLogout() {
         // Get Stage
