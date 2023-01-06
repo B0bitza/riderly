@@ -1,0 +1,11 @@
+.main_menu_container{
+    -fx-background-color: #EEEEEE;
+    -fx-alignment: center;
+}
+
+.title_container{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20 20 0 0;
+    -fx-alignment: top_center;
+    -fx-padding: 10;
+}
