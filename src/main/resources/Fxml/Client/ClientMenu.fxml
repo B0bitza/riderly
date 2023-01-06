@@ -22,6 +22,11 @@
                 </graphic>
             </Button>
             <Line endX="120.0" />
+         <Button fx:id="istoricBtn" mnemonicParsing="false" text="Istoric">
+            <graphic>
+               <FontAwesomeIconView glyphName="HISTORY" size="20" />
+            </graphic>
+         </Button>
             <Button fx:id="logoutBtn" mnemonicParsing="false" text="Logout">
                 <graphic>
                     <FontAwesomeIconView glyphName="EXTERNAL_LINK" size="20" />
@@ -33,7 +38,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="riderly" />
         </VBox>
         <VBox prefHeight="120.0" prefWidth="130.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report Bug?" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ai o problema?" />
             <Label text="Raporteaza orice eroare pe care o ai aici" />
             <Button fx:id="repBtn" mnemonicParsing="false" text="Report">
                 <graphic>
