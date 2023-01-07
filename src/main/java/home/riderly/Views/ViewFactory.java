@@ -16,7 +16,6 @@ public class ViewFactory {
     private AnchorPane bicicleteView;
     private AnchorPane trotineteView;
     private AnchorPane istoricView;
-    private AnchorPane inchiriazaView;
 
     public ViewFactory() {
         this.clientSelMenuItem = new SimpleStringProperty("");
@@ -58,16 +57,6 @@ public class ViewFactory {
         }
         return istoricView;
     }
-    public AnchorPane getInchiriazaView(){
-        if (inchiriazaView == null) {
-            try {
-                inchiriazaView = new FXMLLoader(getClass().getResource("/Fxml/Client/Inchiriaza.fxml")).load();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return inchiriazaView;
-    }
     public void showLoginWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
         createStage(loader);
@@ -94,5 +83,9 @@ public class ViewFactory {
 
     public void closeStage(Stage stage){
         stage.close();
+    }
+    public void showInchiriazaWindow() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Inchiriaza.fxml"));
+        createStage(loader);
     }
 }

@@ -17,10 +17,20 @@ public class BicicleteController implements Initializable {
     public Button bicBtn3;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        addListeners();
     }
-    public void addListeners2(){
-        bicBtn1.setOnAction(event -> peInchiriaza());
+    public void addListeners(){
+        bicBtn1.setOnAction(event -> onBicBtn1());
+        bicBtn2.setOnAction(event -> onBicBtn2());
+        bicBtn3.setOnAction(event -> onBicBtn3());
     }
-    private void peInchiriaza(){Model.getInstance().getViewFactory().getClientSelMenuItem().set("Inchiriaza");}
+    private void onBicBtn1() {
+        Model.getInstance().getViewFactory().showInchiriazaWindow();
+    }
+    private void onBicBtn2() {
+        Model.getInstance().getViewFactory().showInchiriazaWindow();
+    }
+    private void onBicBtn3() {
+        Model.getInstance().getViewFactory().showInchiriazaWindow();
+    }
 }
