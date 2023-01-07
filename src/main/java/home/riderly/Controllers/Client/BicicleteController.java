@@ -4,6 +4,8 @@ import home.riderly.Models.Model;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,12 +27,12 @@ public class BicicleteController implements Initializable {
         bicBtn3.setOnAction(event -> onBicBtn3());
     }
     private void onBicBtn1() {
-        Model.getInstance().getViewFactory().showInchiriazaWindow();
+        Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
     }
     private void onBicBtn2() {
-        Model.getInstance().getViewFactory().showInchiriazaWindow();
+        Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
     }
     private void onBicBtn3() {
-        Model.getInstance().getViewFactory().showInchiriazaWindow();
+        Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
     }
 }

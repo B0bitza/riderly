@@ -11,7 +11,7 @@
    <Text layoutX="127.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0"
          text="In functie de nr. de km pe care il vei parcurge vei fi taxat 3 lei/km."/>
    <Text layoutX="67.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0"
-         text="Ai la dispozitie maxim 2 ore pentru a returna vehiculul la standul de unde a fost ridicata."
+         text="Ai la dispozitie maxim 2 ore pentru a returna vehiculul la standul de unde a fost ridicat."
          AnchorPane.bottomAnchor="48.98828125"/>
    <Button fx:id="okBtn" layoutX="283.0" layoutY="87.0" mnemonicParsing="false" text="OK"
            AnchorPane.bottomAnchor="14.0"/>

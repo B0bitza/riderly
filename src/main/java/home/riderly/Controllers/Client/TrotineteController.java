@@ -4,6 +4,7 @@ import home.riderly.Models.Model;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,9 +24,9 @@ public class TrotineteController implements Initializable {
         trotBtn2.setOnAction(event -> onTrotBtn2());
     }
     private void onTrotBtn1() {
-        Model.getInstance().getViewFactory().showInchiriazaWindow();
+        Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
     }
     private void onTrotBtn2() {
-        Model.getInstance().getViewFactory().showInchiriazaWindow();
+        Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
     }
 }
