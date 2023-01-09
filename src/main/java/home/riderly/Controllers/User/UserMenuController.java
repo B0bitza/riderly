@@ -1,4 +1,4 @@
-package home.riderly.Controllers.Client;
+package home.riderly.Controllers.User;
 
 import home.riderly.Models.Model;
 import javafx.fxml.Initializable;
@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ClientMenuController implements Initializable {
+public class UserMenuController implements Initializable {
     public Button bicBtn;
     public Button trotBtn;
     public Button logoutBtn;

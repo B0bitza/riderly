@@ -1,4 +1,4 @@
-package home.riderly.Controllers.Client;
+package home.riderly.Controllers.User;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;

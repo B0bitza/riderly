@@ -1,4 +1,4 @@
-package home.riderly.Controllers.Client;
+package home.riderly.Controllers.User;
 
 import home.riderly.Models.Model;
 import javafx.fxml.Initializable;

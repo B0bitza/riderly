@@ -11,8 +11,7 @@ module home.riderly {
     opens home.riderly to javafx.fxml;
     exports home.riderly;
     exports home.riderly.Controllers;
-    exports home.riderly.Controllers.Admin;
-    exports home.riderly.Controllers.Client;
+    exports home.riderly.Controllers.User;
     exports home.riderly.Models;
     exports home.riderly.Views;
 }

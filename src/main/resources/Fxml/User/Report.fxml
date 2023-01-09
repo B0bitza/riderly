@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="750.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.riderly.Controllers.Client.ReportController">
+<AnchorPane prefHeight="750.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.riderly.Controllers.User.ReportController">
    <Label layoutX="300.0" layoutY="41.0" text="Raporteaza orice problema pe care o intalnesti!" AnchorPane.topAnchor="41.0" />
    <Label layoutX="299.0" layoutY="56.0" prefHeight="20.0" prefWidth="258.0" text="Cu ajutorul tau se va putea inbunatatii aplicatia!" AnchorPane.topAnchor="56.0" />
    <VBox layoutX="150.0" layoutY="140.0" prefHeight="450.0" prefWidth="550.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0">
