@@ -23,7 +23,8 @@ public class ClientMenuController implements Initializable {
         bicBtn.setOnAction(event -> peBiciclete());
         trotBtn.setOnAction(event -> peTrotinete());
         istoricBtn.setOnAction(event -> peIstoric());
-        logoutBtn.setOnAction(event -> onLogout());
+        logoutBtn.setOnAction(event -> peLogout());
+        repBtn.setOnAction(event -> peReport());
     }
     private void peBiciclete(){
         Model.getInstance().getViewFactory().getClientSelMenuItem().set("Biciclete");
@@ -34,7 +35,7 @@ public class ClientMenuController implements Initializable {
     public void peIstoric(){
         Model.getInstance().getViewFactory().getClientSelMenuItem().set("Istoric");
     }
-    private void onLogout() {
+    private void peLogout() {
         // Get Stage
         Stage stage = (Stage) bicBtn.getScene().getWindow();
         // Close the client window
@@ -43,5 +44,8 @@ public class ClientMenuController implements Initializable {
         Model.getInstance().getViewFactory().showLoginWindow();
         // Set clent login success flag to false
         Model.getInstance().setClientLoginSuccessFlag(false);
+    }
+    public void peReport(){
+        Model.getInstance().getViewFactory().getClientSelMenuItem().set("Report");
     }
 }

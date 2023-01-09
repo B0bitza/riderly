@@ -17,6 +17,7 @@ public class ViewFactory {
     private AnchorPane bicicleteView;
     private AnchorPane trotineteView;
     private AnchorPane istoricView;
+    private AnchorPane reportView;
 
     public ViewFactory() {
         this.clientSelMenuItem = new SimpleStringProperty("");
@@ -62,6 +63,18 @@ public class ViewFactory {
     public void showLoginWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
         createStage(loader);
+    }
+
+
+    public AnchorPane getReportView() {
+        if (reportView == null) {
+            try {
+                reportView = new FXMLLoader(getClass().getResource("/Fxml/Client/Report.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return reportView;
     }
 
     public void showClientWindow() {

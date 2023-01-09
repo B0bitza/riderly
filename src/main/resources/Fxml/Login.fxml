@@ -18,7 +18,10 @@
         <TextField fx:id="user_txt" />
         <Label fx:id="passLbl" text="Password:" />
         <TextField fx:id="passTxt" />
-        <Button fx:id="loginBtn" mnemonicParsing="false" text="Submit" />
+        <Button fx:id="loginBtn" mnemonicParsing="false" text="Submit">
+         <graphic>
+            <FontAwesomeIconView glyphName="CHECK" />
+         </graphic></Button>
         <Label fx:id="errLbl" text="Eroare!" />
     </VBox>
 </AnchorPane>
