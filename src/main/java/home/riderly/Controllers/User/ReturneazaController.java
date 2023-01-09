@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InchiriazaController implements Initializable {
+public class ReturneazaController implements Initializable {
     public Button okBtn;
     //when okBtn is pressed, close the popup window
     @Override

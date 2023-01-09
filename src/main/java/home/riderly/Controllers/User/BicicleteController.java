@@ -17,6 +17,8 @@ public class BicicleteController implements Initializable {
     public Button bicBtn2;
     public ImageView bicImg3;
     public Button bicBtn3;
+    public Button returnBtn;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         addListeners();
@@ -25,6 +27,7 @@ public class BicicleteController implements Initializable {
         bicBtn1.setOnAction(event -> onBicBtn1());
         bicBtn2.setOnAction(event -> onBicBtn2());
         bicBtn3.setOnAction(event -> onBicBtn3());
+        returnBtn.setOnAction(event -> onReturnBtn());
     }
     private void onBicBtn1() {
         Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
@@ -35,4 +38,5 @@ public class BicicleteController implements Initializable {
     private void onBicBtn3() {
         Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
     }
+    private void onReturnBtn(){Model.getInstance().getViewFactory().showPopupWindow2(Modality.APPLICATION_MODAL);}
 }

@@ -117,4 +117,21 @@ public class ViewFactory {
         stage.setResizable(false);
         stage.show();
     }
+
+    public void showPopupWindow2(Modality applicationModal) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/User/Returneaza.fxml"));
+        Stage stage = new Stage();
+        stage.initModality(applicationModal);
+        Scene scene = null;
+        try {
+            scene = new Scene(loader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setScene(scene);
+        stage.setTitle("riderly - Returnare");
+        stage.setResizable(false);
+        stage.show();
+    }
+
 }
