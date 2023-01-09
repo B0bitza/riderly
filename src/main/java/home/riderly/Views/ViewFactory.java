@@ -1,6 +1,6 @@
 package home.riderly.Views;
 
-import home.riderly.Controllers.Client.ClientController;
+import home.riderly.Controllers.User.UserController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
@@ -30,7 +30,7 @@ public class ViewFactory {
     public AnchorPane getBicicleteView() {
         if (bicicleteView == null) {
             try {
-                bicicleteView = new FXMLLoader(getClass().getResource("/Fxml/Client/Biciclete.fxml")).load();
+                bicicleteView = new FXMLLoader(getClass().getResource("/Fxml/User/Biciclete.fxml")).load();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -41,7 +41,7 @@ public class ViewFactory {
     public AnchorPane getTrotineteView() {
         if (trotineteView == null) {
             try {
-                trotineteView = new FXMLLoader(getClass().getResource("/Fxml/Client/Trotinete.fxml")).load();
+                trotineteView = new FXMLLoader(getClass().getResource("/Fxml/User/Trotinete.fxml")).load();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -52,7 +52,7 @@ public class ViewFactory {
     public AnchorPane getIstoricView() {
         if (istoricView == null) {
             try {
-                istoricView = new FXMLLoader(getClass().getResource("/Fxml/Client/Istoric.fxml")).load();
+                istoricView = new FXMLLoader(getClass().getResource("/Fxml/User/Istoric.fxml")).load();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -69,7 +69,7 @@ public class ViewFactory {
     public AnchorPane getReportView() {
         if (reportView == null) {
             try {
-                reportView = new FXMLLoader(getClass().getResource("/Fxml/Client/Report.fxml")).load();
+                reportView = new FXMLLoader(getClass().getResource("/Fxml/User/Report.fxml")).load();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -78,9 +78,9 @@ public class ViewFactory {
     }
 
     public void showClientWindow() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Client.fxml"));
-        ClientController clientController = new ClientController();
-        loader.setController(clientController);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/User/User.fxml"));
+        UserController userController = new UserController();
+        loader.setController(userController);
         createStage(loader);
     }
 
@@ -103,7 +103,7 @@ public class ViewFactory {
     }
 
     public void showPopupWindow(Modality applicationModal) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Inchiriaza.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/User/Inchiriaza.fxml"));
         Stage stage = new Stage();
         stage.initModality(applicationModal);
         Scene scene = null;

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="750.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.riderly.Controllers.Client.TrotineteController">
+<AnchorPane prefHeight="750.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.riderly.Controllers.User.TrotineteController">
    <Text layoutX="59.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alege trotineta:" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0" />
    <ImageView fx:id="trotImg1" fitHeight="207.0" fitWidth="267.0" layoutX="75.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="88.0" AnchorPane.topAnchor="100.0">
       <Image url="@../../Images/trot1.jpg" />
