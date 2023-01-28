@@ -20,7 +20,7 @@ public class SendEmail {
 
         try {
             MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("vlad.gozman02@e-uvt.ro"));
+            message.setFrom(new InternetAddress("youremail"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
             message.setSubject(subject);
             message.setText(body);
