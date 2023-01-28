@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 
 public class InchiriazaController implements Initializable {
     public Button okBtn;
-    //when okBtn is pressed, close the popup window
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         addListeners();

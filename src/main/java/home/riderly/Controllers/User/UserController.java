@@ -14,7 +14,8 @@ public class UserController implements Initializable {
         Model.getInstance().getViewFactory().getClientSelMenuItem().addListener((observableValue, oldVal, newVal) -> {
             switch (newVal){
                 case "Trotinete" -> clientParent.setCenter(Model.getInstance().getViewFactory().getTrotineteView());
-                case "Istoric" -> clientParent.setCenter(Model.getInstance().getViewFactory().getIstoricView());
+                case "Istoric-Biciclete" -> clientParent.setCenter(Model.getInstance().getViewFactory().getIstoricBicView());
+                case "Istoric-Trotinete" -> clientParent.setCenter(Model.getInstance().getViewFactory().getIstoricTrotView());
                 case "Report" -> clientParent.setCenter(Model.getInstance().getViewFactory().getReportView());
                 default -> clientParent.setCenter(Model.getInstance().getViewFactory().getBicicleteView());
             }

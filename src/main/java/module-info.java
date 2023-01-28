@@ -7,6 +7,7 @@ module home.riderly {
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
+    requires jakarta.mail;
 
     opens home.riderly to javafx.fxml;
     exports home.riderly;

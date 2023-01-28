@@ -1,6 +1,8 @@
 package home.riderly.Models;
 
 import home.riderly.Views.ViewFactory;
+
+import javax.sql.RowSet;
 import java.sql.ResultSet;
 
 public class Model {
@@ -9,15 +11,19 @@ public class Model {
     private final DatabaseDriver databaseDriver;
     private final User user;
     private boolean clientLoginSuccessFlag;
+    private boolean emptyFieldsFlag;
 
     private Model(){
         this.databaseDriver = new DatabaseDriver();
         this.viewFactory = new ViewFactory();
         this.clientLoginSuccessFlag = false;
+        this.emptyFieldsFlag = false;
         this.user= new User("",0);
     }
     public boolean getClientLoginSuccessFlag() {return this.clientLoginSuccessFlag;}
     public void setClientLoginSuccessFlag(boolean flag) {this.clientLoginSuccessFlag = false;}
+    public boolean getEmptyFieldsFlag() {return this.emptyFieldsFlag;}
+    public void setEmptyFieldsFlag(boolean flag) {this.emptyFieldsFlag = false;}
 
     public static synchronized Model getInstance(){
         if(model == null){
@@ -46,4 +52,8 @@ public class Model {
         }
     }
 
+    public void insertReport(String tipProblema, String descriere, String data) {
+        databaseDriver.insertReport(tipProblema,descriere,data);
+
+    }
 }

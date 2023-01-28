@@ -1,11 +1,16 @@
 package home.riderly.Controllers.User;
 
+import home.riderly.Models.Model;
+import home.riderly.Models.SendEmail;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
+import javafx.stage.Modality;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class ReportController implements Initializable {
@@ -19,5 +24,22 @@ public class ReportController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         choiceBoxReport.getItems().addAll(reportTypes);
+        submitRepBtn.setOnAction(event -> onSubmitReport());
     }
+    private void onSubmitReport() {
+        if (choiceBoxReport.getValue() == null || textAreaReport.getText().isEmpty()) {
+            Model.getInstance().getViewFactory().showAlert(Alert.AlertType.ERROR, "Eroare", "Nu ati completat toate campurile");
+        } else {
+            Model.getInstance().insertReport(choiceBoxReport.getValue(),textAreaReport.getText(), LocalDate.now().toString());
+            Model.getInstance().getViewFactory().showAlert(Alert.AlertType.INFORMATION, "Succes", "Raportul a fost trimis");
+            //send email to admin with the report
+            SendEmail.send("vlad.gozman02@e-uvt.ro","Problema noua",textAreaReport.getText());
+            choiceBoxReport.setValue(null);
+            textAreaReport.setText("");
+
+        }
+        
+    }
+
+
 }

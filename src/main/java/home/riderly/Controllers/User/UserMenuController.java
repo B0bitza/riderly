@@ -13,7 +13,8 @@ public class UserMenuController implements Initializable {
     public Button trotBtn;
     public Button logoutBtn;
     public Button repBtn;
-    public Button istoricBtn;
+    public Button istoricBicBtn;
+    public Button istoricTrotBtn;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -22,7 +23,8 @@ public class UserMenuController implements Initializable {
     public void addListeners(){
         bicBtn.setOnAction(event -> peBiciclete());
         trotBtn.setOnAction(event -> peTrotinete());
-        istoricBtn.setOnAction(event -> peIstoric());
+        istoricBicBtn.setOnAction(event -> peIstoricBic());
+        istoricTrotBtn.setOnAction(event -> peIstoricTrot());
         logoutBtn.setOnAction(event -> peLogout());
         repBtn.setOnAction(event -> peReport());
     }
@@ -32,9 +34,13 @@ public class UserMenuController implements Initializable {
     private void peTrotinete(){
         Model.getInstance().getViewFactory().getClientSelMenuItem().set("Trotinete");
     }
-    public void peIstoric(){
-        Model.getInstance().getViewFactory().getClientSelMenuItem().set("Istoric");
+    public void peIstoricBic(){
+        Model.getInstance().getViewFactory().getClientSelMenuItem().set("Istoric-Biciclete");
     }
+    public void peIstoricTrot(){
+        Model.getInstance().getViewFactory().getClientSelMenuItem().set("Istoric-Trotinete");
+    }
+
     private void peLogout() {
         // Get Stage
         Stage stage = (Stage) bicBtn.getScene().getWindow();

@@ -4,6 +4,7 @@ import home.riderly.Controllers.User.UserController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -16,7 +17,8 @@ public class ViewFactory {
     private final StringProperty clientSelMenuItem;
     private AnchorPane bicicleteView;
     private AnchorPane trotineteView;
-    private AnchorPane istoricView;
+    private AnchorPane istoricBicView;
+    private AnchorPane istoricTrotView;
     private AnchorPane reportView;
 
     public ViewFactory() {
@@ -49,15 +51,26 @@ public class ViewFactory {
         return trotineteView;
     }
 
-    public AnchorPane getIstoricView() {
-        if (istoricView == null) {
+    public AnchorPane getIstoricBicView() {
+        if (istoricBicView == null) {
             try {
-                istoricView = new FXMLLoader(getClass().getResource("/Fxml/User/Istoric.fxml")).load();
+                istoricBicView = new FXMLLoader(getClass().getResource("/Fxml/User/IstoricBic.fxml")).load();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        return istoricView;
+        return istoricBicView;
+    }
+
+    public AnchorPane getIstoricTrotView() {
+        if (istoricTrotView == null) {
+            try {
+                istoricTrotView = new FXMLLoader(getClass().getResource("/Fxml/User/IstoricTrot.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return istoricTrotView;
     }
 
     public void showLoginWindow() {
@@ -134,4 +147,12 @@ public class ViewFactory {
         stage.show();
     }
 
+    public void showAlert(Alert.AlertType error, String eroare, String nuAtiCompletatToateCampurile) {
+        Alert alert = new Alert(error);
+        alert.setTitle(eroare);
+        alert.setHeaderText(null);
+        alert.setContentText(nuAtiCompletatToateCampurile);
+        alert.showAndWait();
+        
+    }
 }
