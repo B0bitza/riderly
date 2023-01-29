@@ -32,7 +32,6 @@ public class ReportController implements Initializable {
         } else {
             Model.getInstance().insertReport(choiceBoxReport.getValue(),textAreaReport.getText(), LocalDate.now().toString());
             Model.getInstance().getViewFactory().showAlert(Alert.AlertType.INFORMATION, "Succes", "Raportul a fost trimis");
-            //send email to admin with the report
             SendEmail.send("vlad.gozman02@e-uvt.ro","Problema noua",textAreaReport.getText());
             choiceBoxReport.setValue(null);
             textAreaReport.setText("");

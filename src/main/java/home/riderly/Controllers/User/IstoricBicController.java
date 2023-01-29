@@ -1,23 +1,40 @@
 package home.riderly.Controllers.User;
 
-import home.riderly.Models.Bicicleta;
+import home.riderly.Models.IstoricBicicleta;
+import home.riderly.Models.Model;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import home.riderly.Models.DatabaseDriver;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class IstoricBicController implements Initializable {
-    public TableView<Bicicleta> istoricBicTbl;
-    public TableColumn<Bicicleta,String> userClm;
-    public TableColumn<Bicicleta,String> bicClm;
-    public TableColumn<Bicicleta,String> dateClm;
+    public TableView<IstoricBicicleta> istoricBicTbl;
+    public TableColumn<IstoricBicicleta,String> userClm;
+    public TableColumn<IstoricBicicleta,String> bicClm;
+    public TableColumn<IstoricBicicleta,String> dateClm;
+    public Button refreshBtn;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<IstoricBicicleta> data = Model.getInstance().getDatabaseDriver().getIstoricBic();
+        istoricBicTbl.setItems(data);
+        userClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRideUser()));
+        bicClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getBicicleta()));
+        dateClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDataInchiriere()));
+        refreshBtn.setOnAction(event -> onRefreshBtn());
+    }
 
+    public void onRefreshBtn() {
+        ObservableList<IstoricBicicleta> data = Model.getInstance().getDatabaseDriver().getIstoricBic();
+        istoricBicTbl.setItems(data);
+        userClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRideUser()));
+        bicClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getBicicleta()));
+        dateClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDataInchiriere()));
     }
 }

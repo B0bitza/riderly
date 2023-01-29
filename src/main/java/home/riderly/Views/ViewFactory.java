@@ -155,4 +155,20 @@ public class ViewFactory {
         alert.showAndWait();
         
     }
+    public void showAlert2(Modality applicationModal) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Eroare");
+        alert.setHeaderText(null);
+        alert.setContentText("Ati inchiriat deja un vehicul!");
+        alert.showAndWait();
+    }
+
+
+    public void showAlert3(Modality applicationModal) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Eroare");
+        alert.setHeaderText(null);
+        alert.setContentText("Nu ati inchiriat niciun vehicul!");
+        alert.showAndWait();
+    }
 }
