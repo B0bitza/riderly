@@ -29,12 +29,12 @@ public class IstoricTrotineta {
         RideUser = rideUser;
     }
 
-    public String getBicicleta() {
+    public String getTrotineta() {
         return trotineta;
     }
 
-    public void setBicicleta(String bicicleta) {
-        this.trotineta = bicicleta;
+    public void setTrotineta(String trotineta) {
+        this.trotineta = trotineta;
     }
 
     public String getDataInchiriere() {

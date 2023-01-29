@@ -53,7 +53,7 @@ public class DatabaseDriver {
         }
     }
 
-    /*public void updateTrotStatus(String numeTrotineta, String status) {
+    public void updateTrotStatus(String numeTrotineta, String status) {
         Statement statement;
         try {
             statement = this.conn.createStatement();
@@ -61,7 +61,7 @@ public class DatabaseDriver {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     public void updateUserStatus(String numeClient, String status) {
         Statement statement;
@@ -90,7 +90,7 @@ public class DatabaseDriver {
     return biciclete;
 }
 
-   /* public ObservableList<IstoricTrotineta>  getIstoricTrot() {
+    public ObservableList<IstoricTrotineta>  getIstoricTrot() {
         ObservableList<IstoricTrotineta> trotinete = FXCollections.observableArrayList();;
         Statement statement;
         ResultSet resultSet = null;
@@ -99,13 +99,13 @@ public class DatabaseDriver {
             resultSet = statement.executeQuery("SELECT * FROM istoricTrotinete");
             //insert the data
             while (resultSet.next()) {
-                trotinete.add(new IstoricTrotineta(resultSet.getInt("id"), resultSet.getString("RideUser"), resultSet.getString("bicicleta"), resultSet.getString("data")));
+                trotinete.add(new IstoricTrotineta(resultSet.getInt("id"), resultSet.getString("RideUser"), resultSet.getString("trotineta"), resultSet.getString("data")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return trotinete;
-    }*/
+    }
 
 
 public void insertIntoIstoric(String User, String Tip){
@@ -118,7 +118,7 @@ public void insertIntoIstoric(String User, String Tip){
     }
 }
 
-   /* public void insertIntoIstoric2(String User, String Tip){
+    public void insertIntoIstoric2(String User, String Tip){
         Statement statement;
         try {
             statement = this.conn.createStatement();
@@ -126,6 +126,6 @@ public void insertIntoIstoric(String User, String Tip){
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
 }

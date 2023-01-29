@@ -1,6 +1,5 @@
 package home.riderly.Controllers.User;
 
-import home.riderly.Models.IstoricBicicleta;
 import home.riderly.Models.IstoricTrotineta;
 import home.riderly.Models.Model;
 import javafx.beans.property.SimpleStringProperty;
@@ -22,6 +21,19 @@ public class IstoricTrotController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<IstoricTrotineta> data = Model.getInstance().getDatabaseDriver().getIstoricTrot();
+        istoricTrotTbl.setItems(data);
+        userClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRideUser()));
+        bicClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTrotineta()));
+        dateClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDataInchiriere()));
+        refreshBtn.setOnAction(event -> onRefreshBtn());
+    }
 
+    public void onRefreshBtn() {
+        ObservableList<IstoricTrotineta> data = Model.getInstance().getDatabaseDriver().getIstoricTrot();
+        istoricTrotTbl.setItems(data);
+        userClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRideUser()));
+        bicClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTrotineta()));
+        dateClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDataInchiriere()));
     }
 }

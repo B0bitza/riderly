@@ -25,12 +25,46 @@ public class TrotineteController implements Initializable {
         trotBtn2.setOnAction(event -> onTrotBtn2());
         returnBtn.setOnAction(event -> onReturnBtn());
     }
+    boolean ok=false;
+    String userInchiriat,tipInchiriat;
+
     private void onTrotBtn1() {
-        Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
+        if(ok){
+            Model.getInstance().getViewFactory().showAlert2(Modality.APPLICATION_MODAL);
+        }
+        else{
+            Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
+            Model.getInstance().getDatabaseDriver().updateTrotStatus("1","1");
+            Model.getInstance().getDatabaseDriver().updateUserStatus("2","1");
+            userInchiriat="bobi";
+            tipInchiriat="xiaomi";
+            ok=true;
+        }
     }
     private void onTrotBtn2() {
-        Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
+        if(ok){
+            Model.getInstance().getViewFactory().showAlert2(Modality.APPLICATION_MODAL);
+        }
+        else{
+            Model.getInstance().getViewFactory().showPopupWindow(Modality.APPLICATION_MODAL);
+            Model.getInstance().getDatabaseDriver().updateTrotStatus("2","1");
+            Model.getInstance().getDatabaseDriver().updateUserStatus("2","1");
+            userInchiriat="bobi";
+            tipInchiriat="kugoo";
+            ok=true;
+        }
     }
-    private void onReturnBtn(){Model.getInstance().getViewFactory().showPopupWindow2(Modality.APPLICATION_MODAL);}
-
+    private void onReturnBtn(){
+        if(!ok){
+            Model.getInstance().getViewFactory().showAlert3(Modality.APPLICATION_MODAL);
+        }
+        else{
+            Model.getInstance().getViewFactory().showPopupWindow2(Modality.APPLICATION_MODAL);
+            Model.getInstance().getDatabaseDriver().updateTrotStatus("1","0");
+            Model.getInstance().getDatabaseDriver().updateTrotStatus("2","0");
+            Model.getInstance().getDatabaseDriver().updateUserStatus("2","0");
+            ok=false;
+            Model.getInstance().getDatabaseDriver().insertIntoIstoric2(userInchiriat,tipInchiriat);
+        }
+    }
 }
