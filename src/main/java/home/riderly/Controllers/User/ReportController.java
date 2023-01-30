@@ -13,6 +13,10 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+
+/**
+ * The class Report controller implements initializable
+ */
 public class ReportController implements Initializable {
     public ChoiceBox<String> choiceBoxReport;
     public TextArea textAreaReport;
@@ -22,11 +26,27 @@ public class ReportController implements Initializable {
 
 
     @Override
+
+/**
+ *
+ * Initialize
+ *
+ * @param url  the url
+ * @param resourceBundle  the resource bundle
+ */
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         choiceBoxReport.getItems().addAll(reportTypes);
         submitRepBtn.setOnAction(event -> onSubmitReport());
     }
+
+    /**
+     *
+     * On submit report
+     *
+     */
     private void onSubmitReport() {
+
         if (choiceBoxReport.getValue() == null || textAreaReport.getText().isEmpty()) {
             Model.getInstance().getViewFactory().showAlert(Alert.AlertType.ERROR, "Eroare", "Nu ati completat toate campurile");
         } else {
@@ -37,7 +57,7 @@ public class ReportController implements Initializable {
             textAreaReport.setText("");
 
         }
-        
+
     }
 
 

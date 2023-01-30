@@ -12,6 +12,10 @@ import javafx.scene.control.TableView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * The class Istoric trot controller implements initializable
+ */
 public class IstoricTrotController implements Initializable {
     public TableView<IstoricTrotineta> istoricTrotTbl;
     public TableColumn<IstoricTrotineta,String> userClm;
@@ -20,7 +24,16 @@ public class IstoricTrotController implements Initializable {
     public Button refreshBtn;
 
     @Override
+
+/**
+ *
+ * Initialize
+ *
+ * @param location  the location
+ * @param resources  the resources
+ */
     public void initialize(URL location, ResourceBundle resources) {
+
         ObservableList<IstoricTrotineta> data = Model.getInstance().getDatabaseDriver().getIstoricTrot();
         istoricTrotTbl.setItems(data);
         userClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRideUser()));
@@ -29,7 +42,14 @@ public class IstoricTrotController implements Initializable {
         refreshBtn.setOnAction(event -> onRefreshBtn());
     }
 
+
+    /**
+     *
+     * On refresh btn
+     *
+     */
     public void onRefreshBtn() {
+
         ObservableList<IstoricTrotineta> data = Model.getInstance().getDatabaseDriver().getIstoricTrot();
         istoricTrotTbl.setItems(data);
         userClm.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRideUser()));

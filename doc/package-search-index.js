@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"home.riderly","l":"home.riderly"},{"m":"home.riderly","l":"home.riderly.Controllers"},{"m":"home.riderly","l":"home.riderly.Controllers.User"},{"m":"home.riderly","l":"home.riderly.Models"},{"m":"home.riderly","l":"home.riderly.Views"}];updateSearchResults();

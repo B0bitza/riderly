@@ -11,6 +11,10 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * The class Login controller implements initializable
+ */
 public class LoginController implements Initializable {
     public Label userLbl;
     public Label passLbl;
@@ -21,10 +25,26 @@ public class LoginController implements Initializable {
 
 
     @Override
+
+/**
+ *
+ * Initialize
+ *
+ * @param url  the url
+ * @param resourceBundle  the resource bundle
+ */
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         loginBtn.setOnAction(event -> onLogin());
     }
+
+    /**
+     *
+     * On login
+     *
+     */
     private void onLogin() {
+
         Stage stage = (Stage) errLbl.getScene().getWindow();
         // Evaluate Client Login Credentials
         Model.getInstance().evaluateClientCred(userField.getText(), passField.getText());

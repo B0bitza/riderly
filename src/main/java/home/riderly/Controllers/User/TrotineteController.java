@@ -9,6 +9,10 @@ import javafx.stage.Modality;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * The class Trotinete controller implements initializable
+ */
 public class TrotineteController implements Initializable {
     public ImageView trotImg1;
     public Button trotBtn1;
@@ -17,10 +21,26 @@ public class TrotineteController implements Initializable {
     public Button returnBtn;
 
     @Override
+
+/**
+ *
+ * Initialize
+ *
+ * @param url  the url
+ * @param resourceBundle  the resource bundle
+ */
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         addListeners();
     }
+
+    /**
+     *
+     * Add listeners
+     *
+     */
     public void addListeners(){
+
         trotBtn1.setOnAction(event -> onTrotBtn1());
         trotBtn2.setOnAction(event -> onTrotBtn2());
         returnBtn.setOnAction(event -> onReturnBtn());
@@ -28,7 +48,14 @@ public class TrotineteController implements Initializable {
     boolean ok=false;
     String userInchiriat,tipInchiriat;
 
+
+    /**
+     *
+     * On trot btn1
+     *
+     */
     private void onTrotBtn1() {
+
         if(ok){
             Model.getInstance().getViewFactory().showAlert2(Modality.APPLICATION_MODAL);
         }
@@ -41,7 +68,14 @@ public class TrotineteController implements Initializable {
             ok=true;
         }
     }
+
+    /**
+     *
+     * On trot btn2
+     *
+     */
     private void onTrotBtn2() {
+
         if(ok){
             Model.getInstance().getViewFactory().showAlert2(Modality.APPLICATION_MODAL);
         }
@@ -54,7 +88,14 @@ public class TrotineteController implements Initializable {
             ok=true;
         }
     }
+
+    /**
+     *
+     * On return btn
+     *
+     */
     private void onReturnBtn(){
+
         if(!ok){
             Model.getInstance().getViewFactory().showAlert3(Modality.APPLICATION_MODAL);
         }

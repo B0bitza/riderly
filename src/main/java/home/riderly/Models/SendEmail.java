@@ -3,8 +3,22 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.Properties;
 
+
+/**
+ * The class Send email
+ */
 public class SendEmail {
+
+    /**
+     *
+     * Send
+     *
+     * @param to  the to
+     * @param subject  the subject
+     * @param body  the body
+     */
     public static void send(String to, String subject, String body) {
+
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");

@@ -1,0 +1,6 @@
+module:home.riderly
+home.riderly
+home.riderly.Controllers
+home.riderly.Controllers.User
+home.riderly.Models
+home.riderly.Views
